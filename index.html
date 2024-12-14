@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehliyet Sınavı Quiz Uygulaması</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="info-boxes">
+            <div class="info-box">
+                <strong>Kategori</strong>
+                Tüm Sınav Soruları
+            </div>
+            <div class="info-box">
+                <strong>Soru / Süre</strong>
+                50 Soru / 45 Dakika
+            </div>
+            <div class="info-box">
+                <strong>Ehliyet Sınıfı</strong>
+                B Sınıfı
+            </div>
+        </div>
+
+        <div class="timer-container hidden" id="timer-container">
+            <i class="fas fa-clock"></i>
+            <span id="timer">45:00</span>
+        </div>
+
+        <div class="start-screen" id="start-screen">
+            <button class="start-btn" id="start-btn">Testi Başlat</button>
+        </div>
+
+        <div class="quiz-container" id="quiz-container">
+            <div id="quiz-content"></div>
+            <div id="next-btn-container" class="hidden">
+                <button id="next-btn" class="btn">Devam Et</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
