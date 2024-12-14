@@ -41,10 +41,22 @@ class Quiz {
         const questionDiv = document.createElement('div');
         questionDiv.classList.add('question');
 
+        // Soru başlığı
         const questionTitle = document.createElement('h3');
         questionTitle.textContent = `${this.currentQuestionIndex + 1}. ${currentQuestion.question}`;
         questionDiv.appendChild(questionTitle);
 
+        // Resim ekleme (eğer varsa)
+        if (currentQuestion.image) {
+            const questionImage = document.createElement('img');
+            questionImage.src = currentQuestion.image;
+            questionImage.alt = "Soru ile ilgili görsel";
+            questionImage.style.maxWidth = "200px"; // Resim boyutunu ayarla
+            questionImage.style.marginBottom = "10px";
+            questionDiv.appendChild(questionImage);
+        }
+
+        // Seçenekler
         currentQuestion.options.forEach((option, index) => {
             const optionDiv = document.createElement('div');
             optionDiv.classList.add('option');
@@ -122,8 +134,8 @@ class Quiz {
     }
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const quiz = new Quiz(questions);
     quiz.start();
 });
+
